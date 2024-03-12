@@ -4,13 +4,17 @@ import 'package:app/utils/constant_manager.dart';
 import 'package:app/widgets/space_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/size_config.dart';
 
-class InitialScreen extends StatelessWidget {
+class InitialScreen extends StatefulWidget {
   const InitialScreen({super.key});
 
+  @override
+  State<InitialScreen> createState() => _InitialScreenState();
+}
+
+class _InitialScreenState extends State<InitialScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -58,7 +62,7 @@ class InitialScreen extends StatelessWidget {
                 ),
               ),
               TextSpan(
-                text: ' During ',
+                text: ' during ',
                 style: TextStyle(color: Colors.black),
               ),
               TextSpan(
@@ -69,8 +73,15 @@ class InitialScreen extends StatelessWidget {
                 ),
               ),
               TextSpan(
-                text: ' can be very Dangerous',
+                text: ' can be very ',
                 style: TextStyle(color: Colors.black),
+              ),
+              TextSpan(
+                text: 'Dangerous',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),

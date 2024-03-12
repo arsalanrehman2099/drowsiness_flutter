@@ -16,6 +16,9 @@ dependencies:
   google_fonts:
   fluttertoast:
   loading_overlay:
+  firebase_core:
+  firebase_auth:
+  cloud_firestore: 
 
 
 
