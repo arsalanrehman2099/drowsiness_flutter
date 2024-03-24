@@ -1,3 +1,5 @@
+import 'package:app/screens/camera_screen.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -5,8 +7,36 @@ import '../utils/constant_manager.dart';
 import '../utils/size_config.dart';
 import '../widgets/space_bar.dart';
 
-class AlarmScreen extends StatelessWidget {
+class AlarmScreen extends StatefulWidget {
   const AlarmScreen({super.key});
+
+  @override
+  State<AlarmScreen> createState() => _AlarmScreenState();
+}
+
+class _AlarmScreenState extends State<AlarmScreen> {
+
+  late AudioPlayer player = AudioPlayer();
+  String filePath = 'alarm.mp3';
+
+  @override
+  void initState() {
+    super.initState();
+
+    initPlayer();
+  }
+
+  initPlayer() async {
+    player = AudioPlayer();
+    player.setReleaseMode(ReleaseMode.loop);
+    player.play(AssetSource(filePath));
+  }
+
+  @override
+  void dispose() {
+    player.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +66,7 @@ class AlarmScreen extends StatelessWidget {
                 const Spacebar('h', space: 3.5),
                 InkWell(
                   onTap: () {
-                    Get.back();
+                    Get.off(() => CameraScreen());
                   },
                   child: Container(
                     padding:

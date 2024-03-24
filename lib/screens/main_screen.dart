@@ -1,5 +1,5 @@
 import 'package:app/controllers/user_controller.dart';
-import 'package:app/screens/alarm_screen.dart';
+import 'package:app/screens/camera_screen.dart';
 import 'package:app/utils/constant_manager.dart';
 import 'package:app/utils/size_config.dart';
 import 'package:app/widgets/space_bar.dart';
@@ -29,7 +29,7 @@ class MainScreen extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        Get.to(() => AlarmScreen());
+                        Get.to(() => CameraScreen());
                       },
                       style: ElevatedButton.styleFrom(
                         shape: CircleBorder(),
